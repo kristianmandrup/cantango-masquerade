@@ -3,3 +3,4 @@ module CanTango
     autoload_modules :Masquerader
   end
 end
+require 'cantango/masquerade_ext'
