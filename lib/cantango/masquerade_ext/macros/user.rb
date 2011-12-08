@@ -5,7 +5,7 @@ module CanTango::Macros
       options = CanTango::Macros.extract(options) if options.any_kind_of?(Array, Symbol)
 
       if defined? CanTango::Macros::Masquerader::User
-        self.send :include, CanTango::Macros::Masquerader::User
+        self.extend CanTango::Macros::Masquerader::User
         masquerader if options[:masquerade]
       end
     end
