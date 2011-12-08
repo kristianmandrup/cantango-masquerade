@@ -1,5 +1,7 @@
 module CanTango::Macros
   module Masquerader
-    autoload_modules :Account, :User
+    sweet_scope :ns => {:CanTango => 'cantango/masquerade'} do
+      autoload_modules :Account, :User
+    end
   end
 end

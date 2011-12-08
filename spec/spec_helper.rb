@@ -2,9 +2,9 @@ require 'rspec'
 
 require 'cantango/core'
 require 'cantango/configuration'
-require 'cantango/api'
+# require 'cantango/api'
 
-require 'cantango-masquerade'
+require 'cantango/masquerade'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.

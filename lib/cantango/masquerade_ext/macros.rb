@@ -1,6 +1,8 @@
 module CanTango
   module Macros
-    sweetload :User, :Account
+    sweet_scope :ns => {:CanTango => 'cantango/masquerade_ext'} do
+      sweetload :User, :Account
+    end
     
     def self.extract list
       list.inject({}){|res, v| res[v] = true } if options.kind_of? Array

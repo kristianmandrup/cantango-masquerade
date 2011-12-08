@@ -1,1 +1,1 @@
-require 'cantango/ability/helper/masquerade'
+require 'cantango/masquerade/ability/helper/masquerade'

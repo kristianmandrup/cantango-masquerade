@@ -3,7 +3,6 @@ require 'sugar-high/blank'
 require 'hashie'
 require 'sweetloader'
 
-SweetLoader.namespaces = {:CanTango => 'cantango'}
 SweetLoader.mode = :require
 
 module CanTango
@@ -11,3 +10,5 @@ module CanTango
     sweetload :Ability, :Api, :Macros
   end
 end
+
+require 'cantango/masquerade_ext'

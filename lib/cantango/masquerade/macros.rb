@@ -1,6 +1,7 @@
 module CanTango
   module Macros
-    autoload_modules :Masquerader
+    sweet_scope :ns => {:CanTango => 'cantango/masquerade'} do
+      autoload_modules :Masquerader
+    end
   end
 end
-require 'cantango/masquerade_ext'

@@ -1,5 +1,7 @@
 module CanTango
   module Api
-    autoload_modules :Masquerade
+    sweet_scope :ns => {:CanTango => 'cantango/masquerade'} do       
+      sweetload :Masquerade
+    end
   end
 end
