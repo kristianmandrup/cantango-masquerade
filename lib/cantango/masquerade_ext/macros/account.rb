@@ -2,7 +2,8 @@ module CanTango::Macros
   module Account
     def tango_account options = {}
       self.send :include, CanTango::Api::Model::Account
-      options = CanTango::Macros.extract(options) if options.kind_of? Array
+      options = [options] if options.kind_of?(Symbol)
+      options = CanTango::Macros.extract(options) if options.kind_of?(Array)
 
       if defined? CanTango::Macros::Masquerader::Account
         self.send :include, CanTango::Macros::Masquerader::Account

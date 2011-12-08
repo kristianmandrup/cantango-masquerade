@@ -2,6 +2,7 @@ module CanTango::Macros
   module User
     def tango_user options = {}
       self.send :include, CanTango::Api::Model::User
+      options = [options] if options.kind_of?(Symbol)
       options = CanTango::Macros.extract(options) if options.kind_of? Array
 
       if defined? CanTango::Macros::Masquerader::User
