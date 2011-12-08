@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.mdown",
     "Rakefile",
     "VERSION",
+    "cantango-masquerade.gemspec",
     "lib/cantango/masquerade.rb",
     "lib/cantango/masquerade/ability.rb",
     "lib/cantango/masquerade/ability/helper/masquerade.rb",
@@ -74,7 +75,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<rails>, [">= 3.1"])
       s.add_runtime_dependency(%q<sugar-high>, ["~> 0.6.2"])
       s.add_runtime_dependency(%q<sweetloader>, ["~> 0.1.6"])
-      s.add_runtime_dependency(%q<hashie>, [">= 0"])
+      s.add_runtime_dependency(%q<hashie>, ["~> 1.2"])
       s.add_runtime_dependency(%q<cantango-core>, [">= 0.1.9.1"])
       s.add_development_dependency(%q<bundler>, [">= 1.1.rc"])
       s.add_development_dependency(%q<jeweler>, [">= 1.6.4"])
@@ -84,7 +85,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rails>, [">= 3.1"])
       s.add_dependency(%q<sugar-high>, ["~> 0.6.2"])
       s.add_dependency(%q<sweetloader>, ["~> 0.1.6"])
-      s.add_dependency(%q<hashie>, [">= 0"])
+      s.add_dependency(%q<hashie>, ["~> 1.2"])
       s.add_dependency(%q<cantango-core>, [">= 0.1.9.1"])
       s.add_dependency(%q<bundler>, [">= 1.1.rc"])
       s.add_dependency(%q<jeweler>, [">= 1.6.4"])
@@ -95,7 +96,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rails>, [">= 3.1"])
     s.add_dependency(%q<sugar-high>, ["~> 0.6.2"])
     s.add_dependency(%q<sweetloader>, ["~> 0.1.6"])
-    s.add_dependency(%q<hashie>, [">= 0"])
+    s.add_dependency(%q<hashie>, ["~> 1.2"])
     s.add_dependency(%q<cantango-core>, [">= 0.1.9.1"])
     s.add_dependency(%q<bundler>, [">= 1.1.rc"])
     s.add_dependency(%q<jeweler>, [">= 1.6.4"])
