@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cantango-masquerade}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Kristian Mandrup}]
@@ -37,6 +37,8 @@ Gem::Specification.new do |s|
     "lib/cantango/masquerade/macros/masquerader.rb",
     "lib/cantango/masquerade/macros/masquerader/account.rb",
     "lib/cantango/masquerade/macros/masquerader/user.rb",
+    "lib/cantango/masquerade/scope.rb",
+    "lib/cantango/masquerade/scope/ability.rb",
     "lib/cantango/masquerade_ext.rb",
     "lib/cantango/masquerade_ext/macros.rb",
     "lib/cantango/masquerade_ext/macros/account.rb",
@@ -49,6 +51,7 @@ Gem::Specification.new do |s|
     "spec/cantango/masquerade_ext/macros/admin_account_spec.rb",
     "spec/cantango/masquerade_ext/macros/admin_user_spec.rb",
     "spec/cantango/masquerade_spec.rb",
+    "spec/cantango/scope/ability_spec.rb",
     "spec/fixtures/models.rb",
     "spec/fixtures/models/admin.rb",
     "spec/fixtures/models/admin_account.rb",
