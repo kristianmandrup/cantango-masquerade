@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "cantango-masquerade"
   gem.homepage = "http://github.com/kristianmandrup/cantango-masquerade"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Masquerade extension for CanTango}
+  gem.description = %Q{Masquerade extensions and macros for CanTango}
   gem.email = "kmandrup@gmail.com"
   gem.authors = ["Kristian Mandrup"]
   # dependencies defined in Gemfile
