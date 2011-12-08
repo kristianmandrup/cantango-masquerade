@@ -1,6 +1,9 @@
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-$LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'rspec'
+
+require 'cantango/core'
+require 'cantango/configuration'
+require 'cantango/api'
+
 require 'cantango-masquerade'
 
 # Requires supporting files with custom matchers and macros, etc,

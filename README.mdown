@@ -1,0 +1,95 @@
+# Cantango Masquerade
+
+The Masquerade API for [CanTango](https://github.com/kristianmandrup/cantango)
+
+## Status: Dec 8 2011
+
+Initial Gem created
+
+## Dependencies
+
+This extension depends on the CanTango [core](https://github.com/kristianmandrup/cantango-core) and follows the extension conventions as described there.
+
+## Add-ons
+
+* CanTango
+	* Ability
+		* Helper
+			* Masquerade
+  * Api
+    * Masquerade
+  		* Account
+  		* User
+	* Macros
+	  * Masquerader
+			* Account
+			* User
+
+## Core extensions
+
+* CanTango
+	* Macros
+		* Account
+		* User
+
+These macros add the ability to specify usage of masquerade API using a :masquerade option (true or false)
+
+## Usage examples
+
+Masquerader as User example:
+
+```ruby
+class User
+	tango_user :masquerade
+end
+
+class Admin
+	tango_user :masquerade
+end
+
+mike = User.new 'mike'
+admin = Admin.new 'admin'
+
+admin.masquerade_as mike
+admin.masquerade? # => true
+# ...
+admin.stop_masquerade
+admin.masquerade? # => false
+```
+
+Masquerade as Account example:
+
+````ruby
+class UserAccount
+	tango_account :masquerade
+end
+
+class AdminAccount
+	tango_account :masquerade
+end
+
+mike_ac_ = UserAccount.new mike
+admin_ac_ = Admin.new admin
+
+admin_ac.masquerade_as mike_ac_
+admin_ac.masquerade? # => true
+# ...
+admin_ac.stop_masquerade
+admin_ac.masquerade? # => false
+```
+
+## Contributing to cantango-masquerade
+ 
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+* Fork the project
+* Start a feature/bugfix branch
+* Commit and push until you are happy with your contribution
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+## Copyright
+
+Copyright (c) 2011 Kristian Mandrup. See LICENSE.txt for
+further details.
+

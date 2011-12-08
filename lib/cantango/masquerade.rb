@@ -7,5 +7,7 @@ SweetLoader.namespaces = {:CanTango => 'cantango'}
 SweetLoader.mode = :require
 
 module CanTango
-  autoload_modules :Api, :Macros
+  sweet_scope :ns => {:CanTango => 'cantango/masquerade'} do 
+    sweetload :Ability, :Api, :Macros
+  end
 end
