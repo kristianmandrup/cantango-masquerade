@@ -1,43 +1,27 @@
-require 'spec_helper'
+require 'cantango/config'
 require 'fixtures/models'
-require 'helpers/current_user_accounts'
 
-class Context
-  include CanTango::Api::Scope::Account
-  include CanTango::Api::Masquerade::Account
+require 'spec_helper'
 
-  include_and_extend ::CurrentUserAccounts
+class User
+  cantango
 end
 
-class UserAccount
-  tango_account
+class Admin
+  cantango :masquerade
 end
 
-class AdminAccount
-  cantango_account
-end
-
-describe CanTango::Api::Scope::Account do
-  subject { Context.new }
-
-  before do
-    subject.masquerade_as subject.current_admin_account
-  end
-
-  describe 'scope_account(scope, options)' do 
-    specify do
-      subject.scope_account :user do |user|
-        user.candidate.class.should == subject.current_admin_account.class
-      end
+describe CanTango::Macros::Masquerader::User do
+  describe 'masquerader' do
+    before do
+      AdminAccount.masquerader
     end
-  end
 
-  describe 'real_account(scope, options)' do
-    specify do
-      subject.real_account :user do |user|
-        user.candidate.class.should == subject.current_user_account.class
-        user.candidate.user.should == subject.current_user_account.user
+    context 'admin masquerading as mike' do
+      before do
+        admin.masquerade_as mike
       end
+      specify { admin.active_user.should == mike }
     end
   end
 end
