@@ -4,8 +4,11 @@ module CanTango
       sweetload :User, :Account
     end
     
-    def self.extract list
-      list.inject({}){|res, v| res[v] = true } if options.kind_of? Array
+    def self.extract *symbols
+      symbols.inject({}) do |res, v| 
+        res[v] = true
+        res
+      end
     end
   end
 end
