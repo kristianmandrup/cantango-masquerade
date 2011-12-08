@@ -4,20 +4,20 @@ module CanTango::Ability
       def masquerading?
         candidate.respond_to?(:masquerading?) && candidate.masquerading?
       end
+      alias_method :masquerade?, :masquerading?
 
       def masquerade_user?
-        return false if masquerading_off?
         candidate.respond_to?(:active_user) && masquerading?
       end
 
       def masquerade_account?
-        return false if masquerading_off?
-        candidate.respond_to?(:active_account)
+        candidate.respond_to?(:active_account) && masquerading?
       end
 
       def masquerading_off?
         options[:masquerade] == false
       end
+      alias_method :masquerade_off?, :masquerading_off?
       
       def subject
         return candidate.active_user if masquerade_user?

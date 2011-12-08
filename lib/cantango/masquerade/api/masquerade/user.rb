@@ -16,6 +16,7 @@ module CanTango::Api::Masquerade
     def masquerading?
       !@masquerading.nil?
     end
+    alias_method :masquerade?, :masquerading?
   
     private
   
