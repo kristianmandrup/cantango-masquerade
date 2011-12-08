@@ -32,6 +32,12 @@ GEM
     arel (2.2.1)
     builder (3.0.0)
     cancan (1.6.7)
+    cantango-api (0.0.0)
+      cantango-config
+      hashie
+      rails (>= 3.1)
+      sugar-high (>= 0.6.0)
+      sweetloader (~> 0.1.0)
     cantango-config (0.1.9.2)
       cantango-core (~> 0.1.9)
       hashie (~> 1.2)
@@ -130,6 +136,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (>= 1.1.rc)
+  cantango-api
   cantango-config (>= 0.1.8.1)
   cantango-core (>= 0.1.9.1)
   cutter

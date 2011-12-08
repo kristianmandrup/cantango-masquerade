@@ -19,6 +19,7 @@ group :test do
   gem 'require_all', '~> 1.2.0'
 
   gem 'cantango-config',  '>= 0.1.8.1'
+  gem 'cantango-api' # ,     '>= 0.1.0'
 
   gem 'forgery'
   gem 'sqlite3'
