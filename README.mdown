@@ -4,7 +4,7 @@ The Masquerade API for [CanTango](https://github.com/kristianmandrup/cantango)
 
 ## Status: Dec 8 2011
 
-Initial Gem created
+All specs pass. Tested, and integrates very nicely with [CanTango API](https://github.com/kristianmandrup/cantango-api)
 
 ## Dependencies
 
@@ -13,38 +13,38 @@ This extension depends on the CanTango [core](https://github.com/kristianmandrup
 ## Add-ons
 
 * CanTango
-	* Ability
-		* Helper
-			* Masquerade
+  * Ability
+    * Helper
+    * Masquerade
   * Api
     * Masquerade
-  		* Account
-  		* User
-	* Macros
-	  * Masquerader
-			* Account
-			* User
+      * Account
+      * User
+  * Macros
+    * Masquerader
+      * Account
+      * User
 
 ## Core extensions
 
 * CanTango
-	* Macros
-		* Account
-		* User
+  * Macros
+    * Account
+    * User
 
 These macros add the ability to specify usage of masquerade API using a :masquerade option (true or false)
 
 ## Usage examples
 
-Masquerader as User example:
+Masquerade as another user:
 
 ```ruby
 class User
-	tango_user :masquerade
+  tango_user :masquerade
 end
 
 class Admin
-	tango_user :masquerade
+  tango_user :masquerade
 end
 
 mike = User.new 'mike'
@@ -57,21 +57,21 @@ admin.stop_masquerade
 admin.masquerade? # => false
 ```
 
-Masquerade as Account example:
+Masquerade as another account:
 
 ````ruby
 class UserAccount
-	tango_account :masquerade
+  tango_account :masquerade
 end
 
 class AdminAccount
-	tango_account :masquerade
+  tango_account :masquerade
 end
 
-mike_ac_ = UserAccount.new mike
-admin_ac_ = Admin.new admin
+mike_ac = UserAccount.new mike
+admin_ac = Admin.new admin
 
-admin_ac.masquerade_as mike_ac_
+admin_ac.masquerade_as mike_ac
 admin_ac.masquerade? # => true
 # ...
 admin_ac.stop_masquerade
