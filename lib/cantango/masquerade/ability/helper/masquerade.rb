@@ -2,16 +2,16 @@ module CanTango::Ability
   module Helper
     module Masquerade
       def masquerading?
-        candidate.respond_to?(:masquerading?) && candidate.masquerading?
+        candidate.respond_to?(:masquerading?) && candidate.masquerading? && !masquerading_off?
       end
       alias_method :masquerade?, :masquerading?
 
       def masquerade_user?
-        candidate.respond_to?(:active_user) && masquerading?
+        candidate.respond_to?(:active_user) && masquerading? && !masquerading_off?
       end
 
       def masquerade_account?
-        candidate.respond_to?(:active_account) && masquerading?
+        candidate.respond_to?(:active_account) && masquerading? && !masquerading_off?
       end
 
       def masquerading_off?

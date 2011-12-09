@@ -5,12 +5,13 @@ module CanTango::Api::Masquerade
     def masquerade_as user
       raise "Must be a registered type of user, was: #{user}" unless valid_user? user
       @masquerading = true
-      user = user.kind_of?(String) ? ::User.find(user) : user
       @active_user = user
+      self
     end
 
     def stop_masquerade
       @active_user, @masquerading = nil, nil
+      self
     end
 
     def masquerading?
